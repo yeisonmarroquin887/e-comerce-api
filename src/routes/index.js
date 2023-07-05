@@ -4,7 +4,7 @@ const routerCategory = require('./category.router');
 const routerProduct = require('./product.router');
 const routerCart = require('./cart.router');
 const routerPurchase = require('./purchase.router');
-const routerProductimg = require('./productimg.router');
+const routerProductimg = require('./productImg.router');
 const router = express.Router();
 
 // colocar las rutas aquí
