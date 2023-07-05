@@ -10,7 +10,8 @@ cloudinary.config({
 
 const uploadToCloudinary = async(localFilePath, filename) => {
     try {
-        const folder = "e-ecomerce";
+        
+        const folder = "test";
         const filePathOnCloudinary = folder + "/" + path.parse(filename).name;
         const result = await cloudinary.uploader.upload( 
             localFilePath, 

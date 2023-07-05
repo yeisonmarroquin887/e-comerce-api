@@ -7,6 +7,7 @@ const getAll = catchError(async(req, res) => {
     const result = await ProductImg.findAll()
     return res.json(result)
 });
+
 const create = catchError(async(req, res) => {
     const { path, filename } = req.file;
     const { url, public_id } = await uploadToCloudinary(path, filename);
@@ -14,8 +15,6 @@ const create = catchError(async(req, res) => {
     const image = await ProductImg.create(body);
     return res.status(201).json(image);
 });
-
-
 
 const remove = catchError(async(req, res) => {
     const { id } = req.params;
@@ -25,6 +24,7 @@ const remove = catchError(async(req, res) => {
     await image.destroy();
     return res.sendStatus(204);
 });
+
 module.exports = {
     getAll,
     create, 

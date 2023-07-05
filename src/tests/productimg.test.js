@@ -23,11 +23,14 @@ beforeAll(async() => {
 test("POST -> 'URL_BASE', should return code status 201 and res.body.url === body.url", async() => {
     
     const imagePath = path.join(__dirname,'..','public', 'software.jpg')
+
     const res = await supertest(app)
-    .post(BASE_URL)
-    .set("Authorization", `Bearer ${TOKEN}`)
-    .attach('image', imagePath)
+        .post(BASE_URL)
+        .set("Authorization", `Bearer ${TOKEN}`)
+        .attach('image', imagePath)
+
    
+    
     productImgId = res.body.id
     expect(res.status).toBe(201)
     expect(res.body.url).toBeDefined()
